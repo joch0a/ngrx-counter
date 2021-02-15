@@ -4,13 +4,18 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 
 import { StoreModule } from "@ngrx/store";
-import { counterReducer } from "./counter.reducer";
-import { MyCounterComponent } from './my-counter/my-counter.component';
+import { MoviesPageComponent } from "./movies-page/movies-page.component";
+import { MoviesService } from "./movies.service";
+import { HttpClientModule } from "@angular/common/http";
+// import { counterReducer } from "./counter.reducer";
+// import { MyCounterComponent } from './my-counter/my-counter.component';
 
 @NgModule({
-  imports: [BrowserModule, StoreModule.forRoot({ count: counterReducer })],
-  declarations: [AppComponent, MyCounterComponent],
-  bootstrap: [AppComponent]
+  // imports: [BrowserModule, StoreModule.forRoot({ count: counterReducer })],
+  imports: [BrowserModule, StoreModule.forRoot({}), HttpClientModule],
+  declarations: [AppComponent, MoviesPageComponent],
+  bootstrap: [AppComponent],
+  providers: [MoviesService]
 })
 export class AppModule {}
 

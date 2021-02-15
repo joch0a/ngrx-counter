@@ -9,8 +9,6 @@ import { MoviesService } from "./movies.service";
 import { HttpClientModule } from "@angular/common/http";
 import { EffectsModule } from "@ngrx/effects";
 import { MovieEffects } from "./movie.effects";
-// import { counterReducer } from "./counter.reducer";
-// import { MyCounterComponent } from './my-counter/my-counter.component';
 
 @NgModule({
   imports: [

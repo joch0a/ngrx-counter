@@ -7,12 +7,18 @@ import { StoreModule } from "@ngrx/store";
 import { MoviesPageComponent } from "./movies-page/movies-page.component";
 import { MoviesService } from "./movies.service";
 import { HttpClientModule } from "@angular/common/http";
+import { EffectsModule } from "@ngrx/effects";
+import { MovieEffects } from "./movie.effects";
 // import { counterReducer } from "./counter.reducer";
 // import { MyCounterComponent } from './my-counter/my-counter.component';
 
 @NgModule({
-  // imports: [BrowserModule, StoreModule.forRoot({ count: counterReducer })],
-  imports: [BrowserModule, StoreModule.forRoot({}), HttpClientModule],
+  imports: [
+    BrowserModule,
+    StoreModule.forRoot({}),
+    HttpClientModule,
+    EffectsModule.forRoot([MovieEffects])
+  ],
   declarations: [AppComponent, MoviesPageComponent],
   bootstrap: [AppComponent],
   providers: [MoviesService]
